@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
   input:focus {
     outline: none;
   }
+
+ 
 `;
 
 export default GlobalStyle;
