@@ -4,6 +4,7 @@ import Login from './pages/login/Login';
 import JobList from './pages/joblist/JobList';
 import JobDetail from './pages/jobdetail/JobDetail';
 import Resume from './pages/resume/Resume';
+import Footer from './components/footer/Footer';
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/jobdetail" element={<JobDetail />} />
         <Route path="/resume" element={<Resume />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
