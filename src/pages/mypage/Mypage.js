@@ -56,4 +56,3 @@ const ProfileApplyContainer = styled.div`
 `;
 
 export default Mypage;
->>>>>>> 556d4ff492269919713b72c57633fa6d3b007b4b

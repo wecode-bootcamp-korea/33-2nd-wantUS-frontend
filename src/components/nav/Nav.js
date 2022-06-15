@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoIosSearch } from 'react-icons/io';
 import DropMenu from './DropMenu.js';
 import { useNavigate } from 'react-router-dom';
+import SearchModal from './components/SearchModal.js';
 
 const Nav = () => {
   const [dropMenu, setDropMenu] = useState(false);
@@ -65,6 +66,7 @@ const Nav = () => {
           <NavRightContainer>
             <UserSection>
               <SearchIcon />
+
               <Login onClick={checkLogin}>
                 {isLogin ? '로그아웃' : '회원가입/로그인'}
               </Login>
@@ -72,6 +74,7 @@ const Nav = () => {
             <CompanyService>기업 서비스</CompanyService>
           </NavRightContainer>
         </NavContainer>
+        <SearchModal />
       </NavWrapper>
       {dropMenu && <DropMenu />}
     </>
@@ -86,6 +89,7 @@ const NavWrapper = styled.div`
   width: 100%;
   border-bottom: 1px solid #e1e2e3;
   background-color: white;
+  z-index: 9999;
 `;
 
 const NavContainer = styled.div`
