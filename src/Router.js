@@ -8,10 +8,12 @@ import Resume from './pages/resume/Resume';
 import NaverCallback from './pages/login/NaverCallback';
 import KakaoCallback from './pages/login/KakaoCallback';
 import GoogleCallback from './pages/login/GoogleCallback';
+import Nav from './components/nav/Nav';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
