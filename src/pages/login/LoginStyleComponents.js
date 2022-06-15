@@ -1,3 +1,5 @@
+import { SiNaver } from 'react-icons/si';
+import { HiOutlineMail } from 'react-icons/hi';
 import styled, { css } from 'styled-components';
 
 const IconAndText = css`
@@ -42,9 +44,9 @@ export const Title = styled.div`
 `;
 
 export const XIcon = styled.div`
-  cursor: pointer;
   position: absolute;
   right: 1rem;
+  cursor: pointer;
 `;
 
 export const Intro = styled.div`
@@ -73,10 +75,10 @@ export const EmailText = styled.span`
 
 export const EmailInput = styled.input`
   padding: 1rem;
-  font-size: 1.3rem;
   border-radius: 0.4rem;
   border-color: #999999;
   background-color: rgba(135, 206, 235, 0.2);
+  font-size: 1.3rem;
 `;
 
 export const Select = styled.div`
@@ -88,31 +90,39 @@ export const Select = styled.div`
 
 export const SelectEmailButton = styled.button`
   width: 100%;
-  font-size: 1.2rem;
+  padding: 1rem;
   border-radius: 2.5rem;
   border: none;
   background-color: #238bfe; // secondaryBlue
+  font-size: 1.2rem;
   color: white;
-  padding: 1rem;
   cursor: pointer;
+
   &:hover {
     background-color: #1f59fb; // primaryBlue
   }
 `;
 
+export const EmailIcon = styled(HiOutlineMail)`
+  color: white;
+`;
+
 export const SelectOtherText = styled.div``;
 
 export const Options = styled.div`
-  width: 90%;
-  height: 5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 90%;
+  height: 5rem;
+  margin: 4rem;
 `;
 
 export const Kakao = styled.div`
   cursor: pointer;
 `;
+
+export const Naver = styled(Kakao)``;
 
 export const KakaoIcon = styled.div`
   background-color: yellow;
@@ -124,14 +134,21 @@ export const KakaoText = styled.div`
   font-size: 0.8rem;
 `;
 
-export const Naver = styled.div`
-  cursor: pointer;
-`;
+// export const Naver = styled.div`
+//   cursor: pointer;
+// `;
 
 export const NaverIcon = styled.div`
-  background-color: #3bda80;
-  color: white;
   ${IconAndText}
+`;
+
+export const ReactNaverIcon = styled(SiNaver)`
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: #3bda80;
+  font-size: 1.5rem;
 `;
 
 export const NaverText = styled.div`

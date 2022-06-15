@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Wecode",
+    "category": "frontEnd",
+    "location": "Seoul",
+    "careerYear": "all",
+    "stack": "python",
+    "like": false,
+    "createdAt": "2022-06-10"
+  },
+  {
+    "id": 2,
+    "name": "Wecode",
+    "category": "frontEnd",
+    "location": "gyeonggi",
+    "careerYear": "all",
+    "stack": "django",
+    "like": false,
+    "createdAt": "2022-06-10"
+  },
+  {
+    "id": 3,
+    "name": "Wecode",
+    "category": "backEnd",
+    "location": "busan",
+    "careerYear": "newcommer",
+    "stack": "javascript",
+    "like": false,
+    "createdAt": "2022-06-10"
+  },
+  {
+    "id": 4,
+    "name": "Wecode",
+    "category": "backEnd",
+    "location": "Seoul",
+    "careerYear": "experienced",
+    "stack": "react",
+    "like": false,
+    "createdAt": "2022-06-10"
+  }
+]

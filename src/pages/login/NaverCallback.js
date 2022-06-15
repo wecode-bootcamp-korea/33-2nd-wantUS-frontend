@@ -15,7 +15,7 @@ const NaverCallback = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.7.25:8000/user/signin/naver/callback?code=${authorizationCode}&state=${state} `,
+      `http://10.58.3.196:8000/user/signin/naver/callback?code=${authorizationCode}&state=${state} `,
       {
         method: 'GET',
       }
@@ -23,6 +23,8 @@ const NaverCallback = () => {
       .then(res => res.json())
       .then(result => {
         console.log(result);
+        console.log(result.token);
+        localStorage.setItem('token', result.token);
         navigate('/');
       });
   }, []);

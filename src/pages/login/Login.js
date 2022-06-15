@@ -3,6 +3,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { FaComment } from 'react-icons/fa';
 import { TbLetterN } from 'react-icons/tb';
 import { FcGoogle } from 'react-icons/fc';
+import { SiNaver } from 'react-icons/si';
 import {
   LoginContainer,
   Container,
@@ -17,6 +18,7 @@ import {
   EmailText,
   Select,
   SelectEmailButton,
+  EmailIcon,
   SelectOtherText,
   Options,
   Kakao,
@@ -24,6 +26,7 @@ import {
   KakaoText,
   Naver,
   NaverIcon,
+  ReactNaverIcon,
   NaverText,
   Google,
   GoogleIcon,
@@ -42,12 +45,12 @@ const Login = () => {
   const KakaoAuthURL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}`;
   const GOOGLE_LOGIN_URL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${GOOGLE_REDIRECT_URI}&response_type=code&scope=${GOOGLE_SCOPE}`;
 
-  const handleNaverLogin = () => {
-    window.location.href = NaverAuthURL;
-  };
-
   const handleKakaoLogin = () => {
     window.location.href = KakaoAuthURL;
+  };
+
+  const handleNaverLogin = () => {
+    window.location.href = NaverAuthURL;
   };
 
   const handleGoogleLogin = () => {
@@ -81,7 +84,7 @@ const Login = () => {
         </Email>
         <Select>
           <SelectEmailButton>
-            <HiOutlineMail style={{ color: 'white' }} />
+            <EmailIcon />
             이메일로 계속하기
           </SelectEmailButton>
           <SelectOtherText>
@@ -97,7 +100,7 @@ const Login = () => {
           </Kakao>
           <Naver onClick={handleNaverLogin}>
             <NaverIcon>
-              <TbLetterN />
+              <ReactNaverIcon />
             </NaverIcon>
             <NaverText>Naver</NaverText>
           </Naver>

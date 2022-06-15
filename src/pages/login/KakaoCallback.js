@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const KakaoCallback = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const authorizationCode = location.search.split('=')[1];
 
   // const getAuthorizationCode = () => {
@@ -11,7 +11,7 @@ const KakaoCallback = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.7.25:8000/user/signin/kakao/callback?code=${authorizationCode}`,
+      `http://10.58.3.196:8000/user/signin/kakao/callback?code=${authorizationCode}`,
       {
         method: 'GET',
       }
@@ -19,10 +19,11 @@ const KakaoCallback = () => {
       .then(res => res.json())
       .then(result => {
         console.log(result);
+        console.log(result.token);
+        localStorage.setItem('token', result.token);
+        navigate('/');
       });
   }, []);
-
-  // 토큰 저장 코드
 
   return <div>Kakao callback</div>;
 };

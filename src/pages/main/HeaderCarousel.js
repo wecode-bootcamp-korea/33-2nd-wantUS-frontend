@@ -10,10 +10,10 @@ import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper';
 import styled from 'styled-components';
 
-const Carousel = () => {
+const HeaderCarousel = () => {
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={1.5}
       slidesPerGroup={1}
       loop={true}
       loopFillGroupWithBlank={true}
@@ -29,24 +29,39 @@ const Carousel = () => {
     >
       <SwiperSlide>
         <Img src="/images/cartoy.jpg" alt="기업사진" />
+        <Description />
       </SwiperSlide>
       <SwiperSlide>
         <Img src="/images/DetectiveComics.jpg" alt="기업사진" />
+        <Description />
       </SwiperSlide>
       <SwiperSlide>
         <Img src="/images/Disney.jpg" alt="기업사진" />
+        <Description />
       </SwiperSlide>
       <SwiperSlide>
         <Img src="/images/ducktoy.jpg" alt="기업사진" />
+        <Description />
       </SwiperSlide>
     </Swiper>
   );
 };
 
 const Img = styled.img`
-  height: 30rem;
+  height: 20rem;
   width: 100%;
+  border: 1px solid black;
   object-fit: cover;
+  position: relative;
 `;
 
-export default Carousel;
+const Description = styled.div`
+  background-color: white;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 20rem;
+  height: 5rem;
+`;
+
+export default HeaderCarousel;
