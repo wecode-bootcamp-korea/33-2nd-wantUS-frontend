@@ -11,6 +11,7 @@ import KakaoCallback from './pages/login/KakaoCallback';
 import GoogleCallback from './pages/login/GoogleCallback';
 import Nav from './components/nav/Nav';
 import Mypage from './pages/mypage/Mypage';
+import Search from './components/nav/components/Search';
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
         <Route path="/KakaoCallback" element={<KakaoCallback />} />
         <Route path="/GoogleCallback" element={<GoogleCallback />} />
         <Route path="/mypage" element={<Mypage />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </BrowserRouter>
   );
