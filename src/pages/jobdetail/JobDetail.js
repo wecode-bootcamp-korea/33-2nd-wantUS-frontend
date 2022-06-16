@@ -12,13 +12,12 @@ import CompanySlide from './CompanySlide';
 const JobDetail = () => {
   const [apply, setApply] = useState(true);
   const [detailList, setDetailList] = useState({});
-  const [follow, setFollow] = useState({});
   const [userFile, setUserFile] = useState([]);
   const [submitModal, setSubmitModal] = useState(false);
-  const { company_id } = useParams();
+  const { job_id } = useParams();
 
   useEffect(() => {
-    fetch(`http://10.58.3.196:8000/${company_id}/job`, {
+    fetch(`http://10.58.2.54:8000/jobs/${job_id}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -28,29 +27,30 @@ const JobDetail = () => {
       .then(res => {
         setDetailList(res);
       });
+  }, []);
 
-    fetch(`http://10.58.3.196:8000/${company_id}/followedjob`, {
+  const likeBtn = e => {
+    fetch(`http://10.58.2.54:8000/jobs/${job_id}/follow`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
       },
-      body: follow,
-    })
-      .then(res => res.json())
-      .then(data => {
-        setFollow(data);
-      });
-  }, [setFollow]);
+      body: detailList,
+    }).then(res => res.json());
 
-  const likeBtn = () => {
-    fetch('/data/followData.json', {
-      method: 'POST',
+    fetch(`http://10.58.2.54:8000/jobs/${job_id}`, {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
     })
       .then(res => res.json())
-      .then(data => {
-        setFollow(data);
+      .then(res => {
+        setDetailList(res);
       });
   };
+
+  console.log('adsfasd', detailList);
 
   return (
     <div>
@@ -89,7 +89,7 @@ const JobDetail = () => {
                 <div className="CompanyField">IT,컨텐츠</div>
               </FollowCompanyTitle>
             </FollowCompany>
-            <FollowBtn onClick={likeBtn}>좋아요</FollowBtn>
+            <FollowBtn onClick={e => likeBtn(e)}>좋아요</FollowBtn>
           </FollowBox>
           <WarnBox>
             <RiErrorWarningLine className="warnIcon" />
@@ -105,14 +105,12 @@ const JobDetail = () => {
               setApply={setApply}
               detailList={detailList}
               setDetailList={setDetailList}
-              follow={follow}
               likeBtn={likeBtn}
             />
           ) : (
             <ApplyInformation
               setApply={setApply}
               userFile={userFile}
-              follow={follow}
               setUserFile={setUserFile}
               setSubmitModal={setSubmitModal}
               detailList={detailList}

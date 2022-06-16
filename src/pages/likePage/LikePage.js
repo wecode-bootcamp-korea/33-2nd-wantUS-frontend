@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const LikePage = () => {
-  const [likeList, setLikeList] = useState({});
+  const [likeList, setLikeList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.3.196:8000/job/followedjob', {
+    fetch('http://10.58.2.54:8000/jobs/followedjob', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -22,12 +22,16 @@ const LikePage = () => {
       <ContainerCenter>
         <PageTitle>좋아요</PageTitle>
         <LikeCompany>
-          <LikeCompanyBox>
-            <LikeCompanyImg alt="Company img" src={likeList[0]?.image} />
-            <CompanyDescription>{likeList[0]?.position}</CompanyDescription>
-            <CompanyTitle>{likeList[0]?.company_name}</CompanyTitle>
-            <CompanyLocal>{likeList[0]?.location}</CompanyLocal>
-          </LikeCompanyBox>
+          {likeList.map((item, i) => {
+            return (
+              <LikeCompanyBox key={i}>
+                <LikeCompanyImg alt="Company img" src={item.image} />
+                <CompanyDescription>{item.position}</CompanyDescription>
+                <CompanyTitle>{item.company_name}</CompanyTitle>
+                <CompanyLocal>{item.location}</CompanyLocal>
+              </LikeCompanyBox>
+            );
+          })}
         </LikeCompany>
       </ContainerCenter>
     </LikeContainer>

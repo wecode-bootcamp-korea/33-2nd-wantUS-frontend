@@ -12,21 +12,21 @@ const ApplyInformation = ({
   const [submitBtn, setSubmitBtn] = useState(true);
 
   useEffect(() => {
-    fetch('http://10.58.2.136:8000/resumes/list', {
+    fetch('http://10.58.2.54:8000/resumes/list', {
       method: 'GET',
-      // headers: {
-      //   Authorization: localStorage.getItem('token'),
-      // },
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
     })
       .then(res => res.json())
       .then(res => {
         let copy = [...userFile];
-        copy.unshift({ isChecked: true, file: res.result });
-        setUserFile(copy);
+        res.result.map(item => {
+          copy.unshift({ isChecked: true, file: item });
+          return setUserFile(copy);
+        });
       });
   }, []);
-
-  console.log('fileUpload', userFile);
 
   const goToBack = () => {
     setApply(true);
@@ -38,16 +38,37 @@ const ApplyInformation = ({
     setUserFile(copy);
 
     const formData = new FormData();
-    formData.append('resume', userFile[0].file);
+    formData.append('resume', e.target.files[0]);
 
-    fetch('http://10.58.2.136:8000/resumes/upload', {
+    fetch('http://10.58.2.54:8000/resumes/upload', {
       method: 'POST',
-      // headers: {
-      //   Authorization: localStorage.getItem('token'),
-      // },
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
       body: formData,
     }).then(res => res.json());
+
+    userFile.splice(0, userFile.length);
+
+    e.preventdefault();
+
+    fetch('http://10.58.2.54:8000/resumes/list', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
+        let copy = [...userFile];
+        res.result.map(item => {
+          copy.unshift({ isChecked: true, file: item });
+          return setUserFile(copy);
+        });
+      });
   };
+
+  console.log('adf', userFile);
 
   const handleFileChecked = name => {
     const newFileCheck = userFile.map(item => {

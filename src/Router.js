@@ -21,7 +21,7 @@ const Router = () => {
         <Route path="/" element={<Main />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/joblist" element={<JobList />} />
-        <Route path="/jobdetail/:id" element={<JobDetail />} />
+        <Route path="/jobdetail/:job_id" element={<JobDetail />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/mypage" element={<Mypage />} />
         <Route path="/NaverCallback" element={<NaverCallback />} />

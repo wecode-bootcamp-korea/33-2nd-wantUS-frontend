@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BsHeartFill } from '@react-icons/all-files/bs/BsHeartFill';
 
-const Apply = ({ setApply, likeBtn, follow }) => {
+const Apply = ({ setApply, likeBtn, detailList }) => {
   const goToApplyInformation = () => {
     setApply(false);
   };
@@ -17,8 +17,8 @@ const Apply = ({ setApply, likeBtn, follow }) => {
         지원하기
       </ApplyBtn>
       <LikeBox onClick={likeBtn}>
-        <HeartIcon isFollow={follow.results} />
-        <span>{follow.follow_count}</span>
+        <HeartIcon likeFollow={detailList.job_detail?.follow} />
+        <span>{detailList.job_detail?.follow_count}</span>
       </LikeBox>
     </ApplyArea>
   );
@@ -73,5 +73,5 @@ const LikeBox = styled.p`
 `;
 
 const HeartIcon = styled(BsHeartFill)`
-  color: ${({ isFollow }) => (isFollow ? 'red' : '#999999')};
+  color: ${({ likeFollow }) => (likeFollow ? 'red' : '#999999')};
 `;
