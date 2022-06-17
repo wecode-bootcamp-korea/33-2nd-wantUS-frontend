@@ -9,7 +9,7 @@ const GoogleCallback = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.2.54:8000/users/signin/google/callback?code=${authorizationCode}`,
+      `http://52.15.84.15:8000/users/signin/google/callback?code=${authorizationCode}`,
       {
         method: 'GET',
       }

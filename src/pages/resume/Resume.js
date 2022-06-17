@@ -10,7 +10,7 @@ const Resume = () => {
   const [oneChange, setOneChange] = useState(true);
 
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: { Authorization: localStorage.getItem('token') },
     })
@@ -25,7 +25,7 @@ const Resume = () => {
     const formData = new FormData();
     formData.append('resume', e.target.files[0]);
 
-    fetch('http://10.58.2.54:8000/resumes/upload', {
+    fetch('http://52.15.84.15:8000/resumes/upload', {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('token') },
       body: formData,
@@ -33,7 +33,7 @@ const Resume = () => {
 
     userFile.splice(0, userFile.length);
 
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: { Authorization: localStorage.getItem('token') },
     })
@@ -44,7 +44,7 @@ const Resume = () => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: { Authorization: localStorage.getItem('token') },
     })

@@ -16,8 +16,8 @@ const JobItemList = ({ queryString }) => {
 
   const token = localStorage.getItem('token');
   const objForSkeletonUi = [...Array(dataLength).keys()];
-  const url_rawData = `http://10.58.2.54:8000/jobs/private?offset=${page}&limit=${LIMIT}`;
-  const url_filtered = `http://10.58.2.54:8000/jobs/private${queryString}`;
+  const url_rawData = `http://52.15.84.15:8000/jobs/private?offset=${page}&limit=${LIMIT}`;
+  const url_filtered = `http://52.15.84.15:8000/jobs/private${queryString}`;
 
   const newListHandler = data => {
     setNewItemList([

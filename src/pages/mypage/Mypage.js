@@ -6,7 +6,7 @@ import ProfileApplyCompany from './ProfileApplyCompany';
 const Mypage = () => {
   const [applyList, setApplyList] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/applications/results', {
+    fetch('http://52.15.84.15:8000/applications/results', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),

@@ -9,7 +9,7 @@ import SuggestCarousel from './SuggestCarousel';
 const Main = () => {
   const [companyData, setCompanyData] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/jobs/random')
+    fetch('http://52.15.84.15:8000/jobs/random')
       .then(res => res.json())
       .then(data => {
         setCompanyData(data.results);

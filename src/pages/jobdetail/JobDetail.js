@@ -17,7 +17,7 @@ const JobDetail = () => {
   const { job_id } = useParams();
 
   useEffect(() => {
-    fetch(`http://10.58.2.54:8000/jobs/${job_id}`, {
+    fetch(`http://52.15.84.15:8000/jobs/${job_id}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -30,7 +30,7 @@ const JobDetail = () => {
   }, []);
 
   const likeBtn = e => {
-    fetch(`http://10.58.2.54:8000/jobs/${job_id}/follow`, {
+    fetch(`http://52.15.84.15:8000/jobs/${job_id}/follow`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -38,7 +38,7 @@ const JobDetail = () => {
       body: detailList,
     }).then(res => res.json());
 
-    fetch(`http://10.58.2.54:8000/jobs/${job_id}`, {
+    fetch(`http://52.15.84.15:8000/jobs/${job_id}`, {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -49,8 +49,6 @@ const JobDetail = () => {
         setDetailList(res);
       });
   };
-
-  console.log('adsfasd', detailList);
 
   return (
     <div>

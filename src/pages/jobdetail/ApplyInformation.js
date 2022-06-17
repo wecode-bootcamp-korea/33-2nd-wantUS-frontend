@@ -12,7 +12,7 @@ const ApplyInformation = ({
   const [submitBtn, setSubmitBtn] = useState(true);
 
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -40,7 +40,7 @@ const ApplyInformation = ({
     const formData = new FormData();
     formData.append('resume', e.target.files[0]);
 
-    fetch('http://10.58.2.54:8000/resumes/upload', {
+    fetch('http://52.15.84.15:8000/resumes/upload', {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -52,7 +52,7 @@ const ApplyInformation = ({
 
     e.preventdefault();
 
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),
