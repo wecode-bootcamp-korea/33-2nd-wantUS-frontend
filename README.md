@@ -88,3 +88,25 @@
  
 
 ### 염종은 : 채용상세페이지, 좋아요페이지
+
+
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/96937488/174235527-269ac596-82d8-4cc9-9162-1006ea75d9ac.gif)
+
+
+- 기업디테일 페이지
+  - 라이브러리를 이용한 이미지 슬라이드 구현
+  - 좋아요 클릭을 이용한 좋아요 페이지로 페이지 저장
+  - useParams를 이용하여 각 페이지에 맞는 데이터 받아와서 보여주기
+  - 네이버 API를 이용해 각 기업의 위치를 지도로 표시
+
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/96937488/174236090-e65ed8fe-1476-40a0-bc50-8f8d6edb2dd9.gif)
+
+- 이력서 파일 업로드
+  - AWS S3 백엔드와 통신하여 파일 올리기
+  - 이미 올라간 파일 UI에 보여주기
+  - 올린 파일을 선택하고 제출하기
+
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/96937488/174236427-ebebccdf-1d3f-4d5f-aa2e-2696875a8533.gif)
+
+- 좋아요 페이지
+  - 디테일 페이지에서 눌린 좋아요 표시를 따로 저장하여 좋아요 페이지에 
