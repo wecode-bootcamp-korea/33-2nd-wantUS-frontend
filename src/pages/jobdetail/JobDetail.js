@@ -50,6 +50,8 @@ const JobDetail = () => {
       });
   };
 
+  console.log('adsfasd', detailList);
+
   return (
     <div>
       {submitModal ? <SubmitModal setSubmitModal={setSubmitModal} /> : null}
