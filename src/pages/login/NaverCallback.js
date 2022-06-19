@@ -8,7 +8,7 @@ const NaverCallback = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.2.54:8000/users/signin/naver/callback?code=${authorizationCode}&state=${process.env.REACT_APP_STATE} `,
+      `http://52.15.84.15:8000/users/signin/naver/callback?code=${authorizationCode}&state=${process.env.REACT_APP_STATE} `,
       {
         method: 'GET',
       }

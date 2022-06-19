@@ -7,7 +7,7 @@ const KakaoCallback = () => {
 
   useEffect(() => {
     fetch(
-      `http://10.58.2.54:8000/users/signin/kakao/callback?code=${authorizationCode}`,
+      `http://52.15.84.15:8000/users/signin/kakao/callback?code=${authorizationCode}`,
       {
         method: 'GET',
       }

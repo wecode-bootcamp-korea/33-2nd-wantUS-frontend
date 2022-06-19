@@ -5,7 +5,7 @@ const LikePage = () => {
   const [likeList, setLikeList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.2.54:8000/jobs/followedjob', {
+    fetch('http://52.15.84.15:8000/jobs/followedjob', {
       method: 'GET',
       headers: {
         Authorization: localStorage.getItem('token'),

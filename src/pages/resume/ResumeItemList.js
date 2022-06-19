@@ -40,7 +40,7 @@ const ResumeItemList = ({ resumeData, setUserFile }) => {
 
   const fileDelete = e => {
     e.preventDefault();
-    fetch(`http://10.58.2.54:8000/resumes/list/${resumeData.id}`, {
+    fetch(`http://52.15.84.15:8000/resumes/list/${resumeData.id}`, {
       method: 'DELETE',
       headers: { Authorization: localStorage.getItem('token') },
     })
@@ -55,7 +55,7 @@ const ResumeItemList = ({ resumeData, setUserFile }) => {
           alert('삭제가 완료되었습니다.');
         }
       });
-    fetch('http://10.58.2.54:8000/resumes/list', {
+    fetch('http://52.15.84.15:8000/resumes/list', {
       method: 'GET',
       headers: { Authorization: localStorage.getItem('token') },
     })

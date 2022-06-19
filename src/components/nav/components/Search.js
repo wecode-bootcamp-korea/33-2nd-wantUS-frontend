@@ -13,11 +13,11 @@ const Search = () => {
   const navigation = useNavigate();
   const location = useLocation();
 
-  const url_search = `http://10.58.2.54:8000/jobs/private?search=${location.search.slice(
+  const url_search = `http://52.15.84.15:8000/jobs/private?search=${location.search.slice(
     1
   )}`;
   const url_likeData = id => {
-    return `http://10.58.2.54:8000/jobs/${id}/follow`;
+    return `http://52.15.84.15:8000/jobs/${id}/follow`;
   };
 
   const goToDetail = id => {

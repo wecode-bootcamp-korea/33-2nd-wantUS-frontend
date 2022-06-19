@@ -10,7 +10,7 @@ const JobItem = ({ item, onChangeList, token }) => {
   const naviagate = useNavigate();
   const { httpRequest } = useFetch();
 
-  const url_likeData = `http://10.58.2.54:8000/jobs/${id}/follow`;
+  const url_likeData = `http://52.15.84.15:8000/jobs/${id}/follow`;
 
   const goToDetail = () => {
     naviagate(`/jobdetail/${id}`);
