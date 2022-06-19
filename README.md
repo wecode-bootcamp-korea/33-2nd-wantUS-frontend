@@ -27,6 +27,13 @@
 
 ### 김정준 : 로그인/회원가입, 메인페이지
 
+![wantUS_메인페이지](https://user-images.githubusercontent.com/102506443/174467198-f9658bda-1424-4162-ade4-f95b77e09e68.gif )
+
+- 메인페이지
+  - 캐러셀 라이브러리 활용
+  - 백앤드로부터 회사정보를 받아 회사이미지, 회사설명 출력
+
+
 ### 김현주 : 채용공고리스트, 검색바/검색결과페이지
 
 <img src="https://user-images.githubusercontent.com/101119985/174231973-78152b27-9222-4f5f-89b0-f6d7a3bf8e13.gif" width="650" height="" />
