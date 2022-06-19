@@ -25,13 +25,19 @@
 
 ## 담당 페이지 
 
-### 김정준 : 로그인/회원가입, 메인페이지
+### 김정준 : 소셜로그인, 메인페이지
 
 ![wantUS_메인페이지](https://user-images.githubusercontent.com/102506443/174467198-f9658bda-1424-4162-ade4-f95b77e09e68.gif )
 
 - 메인페이지
   - 캐러셀 라이브러리 활용
   - 백앤드로부터 회사정보를 받아 회사이미지, 회사설명 출력
+
+![wantUS_카카오_로그인](https://user-images.githubusercontent.com/102506443/174467331-145b6a5b-5f6b-456d-8e9c-bc8775706875.gif)
+
+- 소셜로그인
+  - 카카오, 네이버, 구글 공식문서를 통해 인가코드를 받는 URL을 작성해 access token을 local storage에 
+  - .env 파일에 중요정보들(Client_key, Secret_key 등)을 담아 .gitignore에 .env 추가
 
 
 ### 김현주 : 채용공고리스트, 검색바/검색결과페이지
